@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OCR Demo</title>
+
+  <!-- TailwindCSS for styling -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+</head>
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex items-center justify-center">
+
+  <!-- Main Card -->
+  <div class="bg-white shadow-2xl rounded-xl p-8 w-full max-w-2xl">
+    <h1 class="text-3xl font-extrabold text-center text-blue-700 mb-6">Image to Text (OCR)</h1>
+
+    <!-- File upload -->
+    <label class="block text-gray-700 mb-2 font-medium">Choose an image:</label>
+    <input type="file" id="image"
+      class="mb-4 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-6">
+      <button onclick="uploadImage()"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded transition">
+        Upload & Extract
+      </button>
+      <button onclick="downloadPDF()"
+        class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded transition">
+        Download PDF
+      </button>
+      <button onclick="speakText()"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-5 py-2 rounded transition">
+        Speak Text 🔊
+      </button>
+    </div>
+
+    <!-- Extracted Text -->
+    <label for="result" class="block text-gray-700 mb-2 font-medium">Extracted Text:</label>
+    <textarea id="result" rows="10"
+      class="w-full border border-gray-300 rounded p-4 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+      placeholder="OCR result will appear here..."></textarea>
+  </div>
+
+  <!-- jsPDF for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Your JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+  
