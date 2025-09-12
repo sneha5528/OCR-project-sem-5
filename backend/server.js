@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 
 // Serve static files from "public" folder (optional)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 
 // Setup upload directory
 const uploadDir = path.join(__dirname, 'uploads');
