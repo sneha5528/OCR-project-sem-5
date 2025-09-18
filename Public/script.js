@@ -8,10 +8,11 @@ async function uploadImage() {
   }
 
   const formData = new FormData();
-  formData.append('image', fileInput.files[0]);
+  formData.append('image', fileInput.files[0]); // ✅ field name must be "image"
 
   try {
-    const response = await fetch('http://localhost:5000/extract', {
+    // ✅ Use relative path so it works on Render
+    const response = await fetch('/extract', {
       method: 'POST',
       body: formData,
     });
