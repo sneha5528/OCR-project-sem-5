@@ -8,10 +8,10 @@ async function uploadImage() {
   }
 
   const formData = new FormData();
-  formData.append('image', fileInput.files[0]); // ✅ field name must be "image"
+  formData.append('image', fileInput.files[0]); // ✅ must match backend field name
 
   try {
-    // ✅ Use relative path so it works on Render
+    // ✅ Relative path so it works on Render (same service for frontend + backend)
     const response = await fetch('/extract', {
       method: 'POST',
       body: formData,
@@ -20,7 +20,7 @@ async function uploadImage() {
     if (!response.ok) throw new Error(await response.text());
 
     const data = await response.json();
-    document.getElementById('result').value = data.text;
+    document.getElementById('result').value = data.text || "No text found in image.";
   } catch (err) {
     console.error('OCR fetch error:', err);
     alert('Failed to extract text: ' + err.message);
