@@ -49,8 +49,8 @@ app.post('/extract', upload.single('image'), async (req, res) => {
   }
 });
 
-// ✅ Catch-all route for frontend (important for Render)
-app.get('*', (req, res) => {
+// ✅ Catch-all route for frontend
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 
