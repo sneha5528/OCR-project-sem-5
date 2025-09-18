@@ -1,0 +1,142 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCR Processor – Login</title>
+  <style>
+    /* Background gradient with subtle pattern */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #4a00e0, #8e2de2);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+      color: white;
+    }
+
+    /* Left content */
+    .left {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .left h2 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .left p {
+      margin-top: 20px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* Right content */
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Glassmorphism form box */
+    .form-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .form-box h3 {
+      color: #fff;
+      margin: 0 0 5px 0;
+      font-size: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 15px;
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .form-box button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left">
+      <h1 class="logo">OCR Processor</h1>
+      <h2>Extract Text Instantly</h2>
+      <p>
+        Sign up to get instant access to our OCR engine. 
+        Upload images, extract text and download your results – all in one place.
+      </p>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right">
+      <div class="form-box">
+        <h3>Welcome!</h3>
+        <p class="subtitle">Enter your details to start using OCR Processor</p>
+        <form id="loginForm">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <button type="submit">Get Started →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Redirect to OCR page after form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = "index.html"; // redirect to your OCR project
+    });
+  </script>
+</body>
+</html>
